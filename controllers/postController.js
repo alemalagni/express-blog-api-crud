@@ -1,4 +1,4 @@
-const menu = require("../data/menu");
+const posts = require("../routers/posts");
 
 function index(req, res){
     res.type('html')

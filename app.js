@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const posts = require("./posts");
+const posts = require("./routers/posts");
 const src = require('debug');
-const postsRouter = require("./posts");
-const postController = require('../controllers/postController');
+const postsRouter = require("./routers/posts");
+const postController = require('./controllers/postController');
 
 app.use( express.static('public') );
 

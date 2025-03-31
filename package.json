@@ -5,8 +5,8 @@
   "main": "posts.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./routers/app.js",
-    "watch": "node --watch ./routers/app.js"
+    "start": "node app.js",
+    "watch": "node --watch app.js"
   },
   "repository": {
     "type": "git",
