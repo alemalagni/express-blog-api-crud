@@ -31,3 +31,5 @@ router.delete( '/:id', postController.destroy);
 app.listen( port, () => {
     console.log( `App in ascolto sulla porta ${port}` );
 })
+
+module.exports = router;
