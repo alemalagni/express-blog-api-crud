@@ -1,4 +1,4 @@
-const postController = require("../data/menu");
+const menu = require("../data/menu");
 
 function index(req, res){
     res.type('html')

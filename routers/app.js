@@ -4,29 +4,29 @@ const port = 3000;
 const posts = require("./posts");
 const src = require('debug');
 const postsRouter = require("./posts");
-const postControler = require('../controllers/postController');
+const postController = require('../controllers/postController');
 
 app.use( express.static('public') );
 
 app.use ( "/posts", postsRouter );
 
 // Index
-router.get( '/', postsRouter.index);
+router.get( '/', postController.index);
 
 // Show
-router.get( '/:id', postsRouter.show);
+router.get( '/:id', postController.show);
 
 // Store
-router.post( '/', postsRouter.store);
+router.post( '/', postController.store);
 
 // Update
-router.put( '/:id', postsRouter.update);
+router.put( '/:id', postController.update);
 
 // Modify
-router.patch( '/:id',postsRouter.modify);
+router.patch( '/:id',postController.modify);
 
 // Destroy
-router.delete( '/:id', postsRouter.destroy);
+router.delete( '/:id', postController.destroy);
 
 app.listen( port, () => {
     console.log( `App in ascolto sulla porta ${port}` );
