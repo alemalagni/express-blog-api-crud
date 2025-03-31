@@ -3,11 +3,14 @@ const app = express();
 const port = 3000;
 const posts = require("./posts");
 const src = require('debug');
+const postsRouter = require("./routers/posts");
 
 app.use( express.static('public') );
 
+app.use ( "/posts", postsRouter );
+
 // Index
-app.get( '/posts', (req, res) => {
+router.get( '/', (req, res) => {
     res.type('html')
         .send(index(req));
 });
@@ -39,7 +42,7 @@ function tag(id){
 }
 
 // Show
-app.get( '/posts/:id', (req, res) => {
+router.get( '/:id', (req, res) => {
     const id = req.params.id;
 
     res.type('html')
@@ -55,22 +58,22 @@ function show(id) {
 }
 
 // Store
-app.post( '/posts', (req, res) => {
+router.post( '/', (req, res) => {
     res.send('Creazione del post');
 });
 
 // Update
-app.put( '/posts/:id', (req, res) => {
+router.put( '/:id', (req, res) => {
     res.send('Modifica integrale del post ' + req.params.id);
 });
 
 // Modify
-app.patch( '/posts/:id', (req, res) => {
+router.patch( '/:id', (req, res) => {
     res.send('Modifica parziale del post ' + req.params.id);
 });
 
 // Destroy
-app.delete( '/posts/:id', (req, res) => {
+router.delete( '/:id', (req, res) => {
     res.send('Eliminazione del post ' + req.params.id);
 });
 
