@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const src = require('debug');
+const router = express.Router();
 const postsRouter = require("./routers/posts");
 const postController = require('./controllers/postController');
 
