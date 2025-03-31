@@ -4,6 +4,7 @@ const port = 3000;
 const posts = require("./posts");
 const src = require('debug');
 const postsRouter = require("./posts");
+const postControler = require('../controllers/postController');
 
 app.use( express.static('public') );
 
@@ -58,24 +59,16 @@ function show(id) {
 }
 
 // Store
-router.post( '/', (req, res) => {
-    res.send('Creazione del post');
-});
+router.post( '/', postsRouter.store);
 
 // Update
-router.put( '/:id', (req, res) => {
-    res.send('Modifica integrale del post ' + req.params.id);
-});
+router.put( '/:id', postsRouter.update);
 
 // Modify
-router.patch( '/:id', (req, res) => {
-    res.send('Modifica parziale del post ' + req.params.id);
-});
+router.patch( '/:id',postsRouter.modify);
 
 // Destroy
-router.delete( '/:id', (req, res) => {
-    res.send('Eliminazione del post ' + req.params.id);
-});
+router.delete( '/:id', postsRouter.destroy);
 
 app.listen( port, () => {
     console.log( `App in ascolto sulla porta ${port}` );
