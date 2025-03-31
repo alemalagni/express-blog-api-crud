@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const posts = require("./routers/posts");
 const src = require('debug');
 const postsRouter = require("./routers/posts");
 const postController = require('./controllers/postController');
