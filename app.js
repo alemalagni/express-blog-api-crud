@@ -3,9 +3,10 @@ const app = express();
 const port = 3000;
 const src = require('debug');
 //const postsRouter = require("./routers/posts");
+const postController = require('./controllers/postController');
 
 app.use( express.static('public') );
-app.use ( "/posts", postsRouter );
+//app.use ( "/posts", postsRouter );
 
 app.get('/', postController.index); // Index
 app.get('/:id', postController.show); // Show
