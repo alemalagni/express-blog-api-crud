@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const posts = require("./posts");
 const src = require('debug');
-const postsRouter = require("./routers/posts");
+const postsRouter = require("./posts");
 
 app.use( express.static('public') );
 
