@@ -9,7 +9,7 @@ app.use( express.json() );
 
 app.use ( "/posts", postsRouter );
 
-router.use(notFound); //Not Found
+app.use(notFound); //Not Found
 
 app.listen( port, () => {
     console.log( `App in ascolto sulla porta ${port}` );
