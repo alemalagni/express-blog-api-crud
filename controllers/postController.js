@@ -1,11 +1,6 @@
 const posts = require("../routers/posts");
 
 function index(req, res){
-    res.type('html')
-        .send(index(req));
-}
-
-function index(req){
     let strIndex = req
     for ( let i = 0; i < posts.length; i++ ) {
         strIndex += `
@@ -19,31 +14,26 @@ function index(req){
                     `
     }
 
-    return strIndex
+    res.type('html')
+        .send(strIndex)
 }
 
 function tag(id){
-    let strTags = "";
-    for ( let i = 0; i < posts.length; i++ ) {
-        strTags += ` ${posts[id].tags[i]}`
-    }
-
-    return strTags;
+    return posts[id].tags.join(", ");;
 }
 
 function show(req, res){
     const id = req.params.id;
 
-    res.type('html')
-        .send(show(id));
-}
-
-function show(id) {
-    `<h2>${posts[id].title}</h2>
+    let = strIndex;
+    strIndex = `<h2>${posts[id].title}</h2>
     <p>${posts[id].slug}</p>
     <div><span>${tag(id)}</span></div>
     <div><img src="imgs/posts/${posts[id].image}"></div>
-    <p>${posts[id].content}</p>`
+    <p>${posts[id].content}</p>`;
+
+    res.type('html')
+        .send(strIndex);
 }
 
 function store(req, res){
