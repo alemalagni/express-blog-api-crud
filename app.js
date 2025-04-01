@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const src = require('debug');
 const postsRouter = require("./routers/router");
-const postController = require('./controllers/postController');
+const notFound = require(`./middlewares/notFound`);
 
 app.use( express.static('public') );
 app.use( express.json() );
