@@ -30,7 +30,7 @@ function show(req, res){
     strIndex = `<h2>${posts[id].title}</h2>
     <p>${posts[id].slug}</p>
     <div><span>${tag(id)}</span></div>
-    <div><img src="imgs/posts/${posts[id].image}"></div>
+    <div><img src="${posts[id].image}"></div>
     <p>${posts[id].content}</p>`;
 
     res.type('html')
