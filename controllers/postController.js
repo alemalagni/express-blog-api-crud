@@ -1,7 +1,8 @@
 const posts = require("../routers/posts");
 
 function index(req, res){
-    let strIndex = req
+    let strIndex = req;
+
     for ( let i = 0; i < posts.length; i++ ) {
         strIndex += `
                     <div>
@@ -24,8 +25,8 @@ function tag(id){
 
 function show(req, res){
     const id = req.params.id;
+    let strIndex = "";
 
-    let = strIndex;
     strIndex = `<h2>${posts[id].title}</h2>
     <p>${posts[id].slug}</p>
     <div><span>${tag(id)}</span></div>
