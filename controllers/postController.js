@@ -38,7 +38,19 @@ function show(req, res){
 }
 
 function store(req, res){
-    console.log(req.body)
+    const newID = posts.length;
+    const newPost = {
+        id: newID,
+        title: req.body.title,
+        content: req.body.content,
+        image: req.body.image,
+        tag: req.body.tag,
+    };
+
+    posts.push(newPost);
+
+    res.status(201);
+    res.json(newPost);
 }
 
 function modify(req, res){
