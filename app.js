@@ -6,6 +6,7 @@ const postsRouter = require("./routers/router");
 const postController = require('./controllers/postController');
 
 app.use( express.static('public') );
+app.use( express.json() );
 
 app.use ( "/posts", postsRouter );
 
