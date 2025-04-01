@@ -10,6 +10,6 @@ router.put( '/:id', postController.update); // Update
 router.patch( '/:id',postController.modify); // Modify
 router.delete( '/:id', postController.destroy); // Destroy
 
-router.use(notFound);
+router.use(notFound); //Not Found
 
 module.exports = router;
