@@ -60,7 +60,19 @@ function update(req, res){
 }
 
 function destroy(req, res){
-    res.send('Eliminazione del post ' + req.params.id);
+    const id = parseInt(req.params.id);
+    const post = posts.find( post => posts.id == id );
+
+    if (!post) {
+        return res.json({
+            status: 404,
+            error: "Not Found",
+            message: "Pizza non trovata"
+            })
+    }
+
+    posts.splice(posts.indexOf(post), 1);
+    res.status(204);
 }
 
 module.exports = { index, show, store, modify, update, destroy }
