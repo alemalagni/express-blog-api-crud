@@ -7,7 +7,6 @@ function index(req, res){
         strIndex += `
                     <div>
                         <h2>${posts[i].title}</h2>
-                        <p>${posts[i].slug}</p>
                         <div><span>${tag(i)}</span></div>
                         <div><img src="..${posts[i].image}"></div>
                         <p>${posts[i].content}</p>
@@ -20,7 +19,7 @@ function index(req, res){
 }
 
 function tag(id){
-    return posts[id].tags.join(", ");;
+    return posts[id].tags.join(", ");
 }
 
 function show(req, res){
@@ -28,7 +27,6 @@ function show(req, res){
     let strIndex = "";
 
     strIndex = `<h2>${posts[id].title}</h2>
-    <p>${posts[id].slug}</p>
     <div><span>${tag(id)}</span></div>
     <div><img src="..${posts[id].image}"></div>
     <p>${posts[id].content}</p>`;
